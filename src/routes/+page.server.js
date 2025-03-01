@@ -1,13 +1,16 @@
 export const load = async (event) => {
-    console.log(event.locals)
     return {
         user: event.locals.user,
-        cica: 23264
+        cica: 23654723654
     }
 }
 export const actions = {
-    default: async (event) => {
-        var data = await event.request.fromDat();
-        console.log(data.get('cica'));
+    cica: async (event) => {
+        var data = await event.request.formData();
+        console.log(data.get('cica'))
+    },
+    kutya: async (event) => {
+        var data = await event.request.formData();
+        console.log(Number(data.get('cica')) + 1)
     }
 }
